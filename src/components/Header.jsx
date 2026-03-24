@@ -5,9 +5,7 @@ import logo2 from "../assets/images/logo2.png";
 import footer from '../assets/images/headermover.png'
 import gsap from 'gsap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import home from '../pages/Home';
 import Explore from '../pages/Explore';
-import Home from './../pages/Home';
 import Transition from './Transition';
 
 
