@@ -1,0 +1,59 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'mouldy';
+  src: url('../src/assets/akfonts/mouldy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'modak';
+  src: url('../src/assets/akfonts/modak.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../src/assets/akfonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.scrollbarhider {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.masked-text {
+  font-size: 8rem;
+  font-weight: bold;
+  color: transparent;
+  background-image: url('https://t4.ftcdn.net/jpg/02/54/21/61/360_F_254216141_ZIWWpUlP2I5sAVpUDvhCAXVs5eBEKHoj.jpg');
+
+  /* background-size: 200%; Enlarged for smooth animation */
+  background-position: 0 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-background 5s infinite alternate ease-in-out;
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}

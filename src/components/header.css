@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'titlef';
+    src: url('../assets/akfonts/titlef.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rpf';
+    src: url('../assets/akfonts/rpf.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bt';
+    src: url('../assets/akfonts/brightons.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ut';
+    src: url('../assets/akfonts/UnderstockRound.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* a {
+    cursor: url('../assets/pointer.png'), auto;
+} */
+
+html,
+body {
+    /* width: 100%;
+    height: 100%; */
+    /* cursor: url('../assets/cursor1.png'), auto; */
+    background-color: #151623;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    box-sizing: border-box;
+    /* Hide scrollbar but allow scroll */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+*::selection {
+    color: #fff;
+    background-color: #151623;
+}
+
+
+
+
+#nav {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    top: 0vh;
+    left: 0vw;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 4vh;
+    z-index: 5;
+    position: relative;
+    /* margin-bottom: 20vh; */
+
+
+    /* background-color: #303030; */
+}
+
+#top-space {
+    height: 18.5vh;
+    width: 100%;
+    z-index: 17;
+    /* background-color: #000; */
+    position: static;
+}
+
+.header {
+    z-index: 179;
+    /* width: 100vw;s */
+    /* height: fit-content; */
+    position: fixed;
+    background-color: #ffffff23;
+    overflow: hidden;
+    width: 96vw;
+    backdrop-filter: blur(1vh);
+
+    /* overflow-x: hidden; */
+    /* background-color: #000; */
+}
+
+.footer {
+    width: 50vw;
+    height: 10vh;
+    margin-top: 20vh;
+    position: fixed;
+    left: 0;
+    /* display: block; */
+    display: flex;
+    flex-direction: colomn;
+    width: 100%;
+    /* background-color: white; */
+    overflow-x: hidden;
+}
+
+.footer img {
+    width: 56.4vw;
+    height: 6vh;
+
+}
+
+#footer1 {
+    position: absolute;
+    left: -100vw;
+}
+
+#footer2 {
+    position: absolute;
+    left: -50vw;
+}
+
+#footer3 {
+    position: absolute;
+    left: 0vw;
+}
+
+#footer4 {
+    position: absolute;
+    left: 50vw;
+}
+
+#footer5 {
+    position: absolute;
+    left: 100vw;
+}
+
+#nav .logo {
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    width: 100%;
+
+    height: 100%;
+    padding: 2vh 3vw;
+    overflow: hidden;
+}
+
+#nav #logo1 {
+    margin-top: 1vh;
+    height: 30px;
+    /* width: 22vw; */
+    object-fit: cover;
+    /* border-style: */
+    /* border-bottom: 0.4vw dashed #151623; */
+    /* background: #000; */
+}
+
+
+#nav #logo2 {
+    margin-top: 1vh;
+    position: absolute;
+    /* Take it out of document flow */
+    top: 30%;
+    /* Adjust as needed */
+    left: 3%;
+    /* Adjust as needed */
+    transform: translate() scale(0.8);
+    /* Center & scale down */
+
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 2vw;
+    pointer-events: none;
+}
+
+#nav .links {
+    /* margin-top: 1vh; */
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    gap: 2vw;
+    top: 3vh;
+    right: 3vw;
+    /* background: #000; */
+    /* padding-top: 0vh; */
+}
+
+#nav .links a {
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-family: 'rpf';
+    font-weight: 550;
+
+    color: #ee983b;
+    background: linear-gradient(225deg, #30e313 0%, #d5f395 100%); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* background-clip: text; */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    /* color: #ee983b; */
+}
+
+/* #nav .links a :hover {
+    background: linear-gradient(225deg,  #d5f395,#30e313 0% 100%); 
+
+} */
+
+#nav .links #menu {
+    width: 1.5vw;
+    /* scale:0; */
+}

@@ -1,0 +1,57 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./explore.css"; // custom styles
+
+const Explore = () => {
+  const [parks, setParks] = useState([]);
+  const [selectedPark, setSelectedPark] = useState(null);
+
+  // Fetch all parks from server
+  useEffect(() => {
+    axios.get("https://nodejs-production-42f2.up.railway.app/parks")
+      .then(res => setParks(res.data))
+      .catch(err => console.error("Error fetching parks:", err));
+  }, []);
+
+  return (
+    <div className="explorePage">
+      <h1 className="exploreTitle">Explore Thrill Trips</h1>
+      
+      <div className="exploreGrid">
+        {parks.map(park => (
+          <div key={park.pid} className="exploreCard" onClick={() => setSelectedPark(park)}>
+            <img
+              src={`https://nodejs-production-42f2.up.railway.app/uploads/${park.pimage}`}
+              alt={park.pname}
+              className="exploreImage"
+            />
+            <div className="exploreCardFooter">
+              <h3>{park.pname}</h3>
+              <p>₹{park.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      {selectedPark && (
+        <div className="modalOverlay" onClick={() => setSelectedPark(null)}>
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+            <button className="closeBtn" onClick={() => setSelectedPark(null)}>✖</button>
+            <h2>{selectedPark.pname}</h2>
+            <p><strong>City:</strong> {selectedPark.pcity}</p>
+            <p><strong>Category:</strong> {selectedPark.category}</p>
+            <p>{selectedPark.description}</p>
+            <img
+              src={`https://nodejs-production-42f2.up.railway.app/uploads/${selectedPark.pimage}`}
+              alt={selectedPark.pname}
+              className="modalImage"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Explore;
