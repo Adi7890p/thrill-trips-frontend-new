@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { fireapp } from '../../backend/firebase'
+import { fireapp } from '../firebase'
 import Header from '../components/Header'
 import axios from 'axios';
 import { GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, getAuth, signInWithPopup } from 'firebase/auth'
