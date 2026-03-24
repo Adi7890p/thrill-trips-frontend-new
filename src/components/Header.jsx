@@ -54,7 +54,7 @@ const Header = (props) => {
 
     return (
         <>
-            <div className='header w-full pr-8 my-3 rounded-full'>
+            <div className='header pr-8 my-3 rounded-full'>
 
                 <nav id="nav" className=''>
                     <div className="logo">

@@ -103,6 +103,7 @@ body::-webkit-scrollbar {
     background-color: #ffffff23;
     overflow: hidden;
     width: 96vw;
+    left: 2vw;
     backdrop-filter: blur(1vh);
 
     /* overflow-x: hidden; */
