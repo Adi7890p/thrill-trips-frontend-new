@@ -89,7 +89,7 @@ const OwnerDash = () => {
 
                     // Initialise WebSocket room connection targeting this Owner specifically
                     const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
-                        transports: ['websocket', 'polling']
+                        withCredentials: true
                     });
                     newSocket.on('connect', () => {
                         console.log('Connected to socket server');

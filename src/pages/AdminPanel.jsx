@@ -66,7 +66,7 @@ const AdminPanel = () => {
 
     // Set refresh mechanism natively tied to socket if needed
     const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
-      transports: ['websocket', 'polling']
+      withCredentials: true
     });
 
     newSocket.on('connect', () => {
