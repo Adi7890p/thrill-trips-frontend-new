@@ -65,10 +65,17 @@ const AdminPanel = () => {
     fetchAdminData();
 
     // Set refresh mechanism natively tied to socket if needed
-    const newSocket = io('https://nodejs-production-42f2.up.railway.app');
+    const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
+      transports: ['websocket', 'polling']
+    });
 
     newSocket.on('connect', () => {
+      console.log('Admin connected to socket server');
       newSocket.emit('join_admin');
+    });
+
+    newSocket.on('connect_error', (err) => {
+      console.log('Admin socket connection error:', err);
     });
 
     newSocket.on('new_park_request', (park) => {

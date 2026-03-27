@@ -88,9 +88,15 @@ const OwnerDash = () => {
                     setHasParks(res.data.hasParks);
 
                     // Initialise WebSocket room connection targeting this Owner specifically
-                    const newSocket = io('https://nodejs-production-42f2.up.railway.app');
+                    const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
+                        transports: ['websocket', 'polling']
+                    });
                     newSocket.on('connect', () => {
+                        console.log('Connected to socket server');
                         newSocket.emit('join_owner', res.data.owner);
+                    });
+                    newSocket.on('connect_error', (err) => {
+                        console.log('Socket connection error:', err);
                     });
 
                     newSocket.on('park_status_updated', (notif) => {
