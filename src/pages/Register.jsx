@@ -26,7 +26,7 @@ const Register = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await axios.post('https://nodejs-production-42f2.up.railway.app/register', {
+    await axios.post('https://react.adityakuril.me/register', {
       username: username,
       password: password,
       fullname: fullname,
@@ -91,3 +91,4 @@ const Register = () => {
 }
 
 export default Register
+

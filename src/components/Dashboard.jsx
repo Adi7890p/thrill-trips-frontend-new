@@ -6,7 +6,7 @@ const Dashboard = () => {
   useEffect(
     ()=>{
       if(sessionStorage.getItem("username")){
-        axios.get('https://nodejs-production-42f2.up.railway.app/user/'+sessionStorage.getItem("username")).then((res)=>{
+        axios.get('https://react.adityakuril.me/user/'+sessionStorage.getItem("username")).then((res)=>{
           setUser(res.data[0]);
           console.log(res.data);
         })
@@ -64,3 +64,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

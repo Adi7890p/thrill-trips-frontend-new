@@ -16,7 +16,7 @@ const MyParks = ({ parks = [], setSel, setActivePark, onUpdate }) => {
     const handleDelete = async (p) => {
         if (window.confirm(`Are you want to delete "${p.pname}"?`)) {
             try {
-                const res = await axios.delete(`https://nodejs-production-42f2.up.railway.app/deletepark/${p.pid}`);
+                const res = await axios.delete(`https://react.adityakuril.me/deletepark/${p.pid}`);
                 if (res.status === 200 || res.data.message) {
                     alert("Park successfully deleted.");
                     if (onUpdate) onUpdate();
@@ -48,7 +48,7 @@ const MyParks = ({ parks = [], setSel, setActivePark, onUpdate }) => {
                             <tr key={p._id || idx} className='flex w-full py-2 border-b-2 border-amber-900 border-dashed items-center justify-between text-center hover:bg-amber-100 transition-colors shrink-0'>
                                 <td className='w-1/6 text-amber-900 font-bold'>#{p.pid.toString().substring(0, 8)}</td>
                                 <td className='w-1/6 font-[gilroy] font-extrabold text-[1.2vw] tracking-wider uppercase'>{p.pname}</td>
-                                <td className='w-1/6 flex justify-center'><img src={p.parkImage ? `https://nodejs-production-42f2.up.railway.app/uploads/${p.parkImage}` : "/dubai.png"} className='h-[12vh] rounded-lg border-2 p-1 border-amber-900 border-dashed w-full max-w-[12vw] object-cover' alt="park" /></td>
+                                <td className='w-1/6 flex justify-center'><img src={p.parkImage ? `https://react.adityakuril.me/uploads/${p.parkImage}` : "/dubai.png"} className='h-[12vh] rounded-lg border-2 p-1 border-amber-900 border-dashed w-full max-w-[12vw] object-cover' alt="park" /></td>
                                 <td className='w-1/6 font-extrabold text-green-700'>₹{p.price}</td>
                                 <td className='w-1/6 flex justify-center'>
                                     <div className={`w-2/3 flex justify-center py-[0.5vh] items-start text-white text-[0.8vw] tracking-widest uppercase font-extrabold shadow-sm rounded-full ${p.approved === 'Approved' ? 'bg-green-500' : p.approved === 'Rejected' ? 'bg-red-500' : 'bg-yellow-500'}`}>{p.approved}</div>

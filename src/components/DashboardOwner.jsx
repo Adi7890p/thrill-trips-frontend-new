@@ -217,7 +217,7 @@ const DashboardOwner = ({ isSubscribed, hasParks, setSel, parks = [], bookings =
                         {parks.slice(0, 3).map((p, i) => (
                             <div key={i} className='flex justify-between px-[1.5vw] h-[8vh] bg-blue-700/50 rounded-lg shrink-0'>
                                 <div className='flex items-center gap-[1vw] truncate'>
-                                    <img src={p.parkImage ? `https://nodejs-production-42f2.up.railway.app/uploads/${p.parkImage}` : "/dubai.png"} className='w-[3vw] h-[3vw] rounded-full shadow-sm' alt="" />
+                                    <img src={p.parkImage ? `https://react.adityakuril.me/uploads/${p.parkImage}` : "/dubai.png"} className='w-[3vw] h-[3vw] rounded-full shadow-sm' alt="" />
                                     <div className='text-[0.9vw] font-bold text-white tracking-wider uppercase truncate'>{p.pname}</div>
                                 </div>
                                 <div className='flex items-center gap-[0.5vw]'>

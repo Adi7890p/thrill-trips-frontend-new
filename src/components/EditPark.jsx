@@ -28,7 +28,7 @@ const EditPark = ({ park, onBack, onUpdate }) => {
         formData.append('parkPrice', editForm.parkPrice);
         formData.append('description', editForm.description);
 
-        axios.put(`https://nodejs-production-42f2.up.railway.app/updatepark/${park.pid}`, formData)
+        axios.put(`https://react.adityakuril.me/updatepark/${park.pid}`, formData)
             .then(res => {
                 alert("Park updated successfully!");
                 if (onUpdate) onUpdate();
@@ -88,3 +88,4 @@ const EditPark = ({ park, onBack, onUpdate }) => {
 };
 
 export default EditPark;
+

@@ -33,7 +33,7 @@ const PaymentGateway = () => {
                 if (apiRoute) {
                     const token = sessionStorage.getItem("token") || sessionStorage.getItem("user");
                     const submitPayload = payload || { token };
-                    const res = await axios.post(`https://nodejs-production-42f2.up.railway.app${apiRoute}`, submitPayload);
+                    const res = await axios.post(`https://react.adityakuril.me${apiRoute}`, submitPayload);
                     if (!res.data.success && !res.data) {
                         alert('Error processing transaction: ' + res.data.message);
                         setLoading(false);
@@ -259,3 +259,4 @@ const PaymentGateway = () => {
 };
 
 export default PaymentGateway;
+

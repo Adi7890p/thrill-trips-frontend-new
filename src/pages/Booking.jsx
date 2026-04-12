@@ -65,17 +65,17 @@ const Booking = () => {
   useEffect(
     () => {
       if (sessionStorage.getItem('status') != 'edit' && params.state.state === 'book') {
-        axios.get('https://nodejs-production-42f2.up.railway.app/bookpark/' + params.state.pid).then((res) => {
+        axios.get('https://react.adityakuril.me/bookpark/' + params.state.pid).then((res) => {
           setPark(res.data);
           console.log(res.data);
         })
       }else if(sessionStorage.getItem('status') == 'edit' && !(params?.state?.pid) ){
-        axios.get('https://nodejs-production-42f2.up.railway.app/bookpark/' + sessionStorage.getItem('pid')).then((res) => {
+        axios.get('https://react.adityakuril.me/bookpark/' + sessionStorage.getItem('pid')).then((res) => {
           setPark(res.data);
           console.log(res.data);
         })
       }else{
-        axios.get('https://nodejs-production-42f2.up.railway.app/bookpark/' + params?.state?.pid).then((res) => {
+        axios.get('https://react.adityakuril.me/bookpark/' + params?.state?.pid).then((res) => {
           setPark(res.data);
           sessionStorage.setItem('pid',res.data.pid);
           console.log(res.data);
@@ -143,7 +143,7 @@ const Booking = () => {
     console.log(addons);
     if (sessionStorage.getItem('status') == 'edit') {
       if (confirm('Total bill is : ' + billref.current.value + '. click ok to Edit booking.')) {
-        await axios.post('https://nodejs-production-42f2.up.railway.app/editbook', {
+        await axios.post('https://react.adityakuril.me/editbook', {
           uid : sessionStorage.getItem('uid'),
           pid: sessionStorage.getItem('pid'),
           username: sessionStorage.getItem('username'),
@@ -200,7 +200,7 @@ const Booking = () => {
         <div className='bg-amber-100 w-[80vw] rounded-3xl p-5 mb-10'>
           <h1 className='text-[#151623] font-extrabold' style={{ fontFamily: 'rpf', color: '#151623' }}>Book Your Trip</h1>
           <div className='flex flex-row items-start  gap-5'>
-            <img src={"https://nodejs-production-42f2.up.railway.app/uploads/" + (park && (park.parkImage || park.pimage))} className='w-[350px] h-[250px] mt-10 mb-3 border-dashed border-3 rounded-2xl p-1 border-amber-900' alt="" />
+            <img src={"https://react.adityakuril.me/uploads/" + (park && (park.parkImage || park.pimage))} className='w-[350px] h-[250px] mt-10 mb-3 border-dashed border-3 rounded-2xl p-1 border-amber-900' alt="" />
 
             <div className='flex flex-col mt-10 p-1 '>
               <h2 className='text-4xl text-yellow-800'>{park && park.pname}</h2>
@@ -311,3 +311,4 @@ const Booking = () => {
 }
 
 export default Booking
+

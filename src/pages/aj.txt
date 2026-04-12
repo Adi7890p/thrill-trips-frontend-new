@@ -8,7 +8,7 @@ const Explore = () => {
 
   // Fetch all parks from server
   useEffect(() => {
-    axios.get("https://nodejs-production-42f2.up.railway.app/parks")
+    axios.get("https://react.adityakuril.me/parks")
       .then(res => setParks(res.data))
       .catch(err => console.error("Error fetching parks:", err));
   }, []);
@@ -21,7 +21,7 @@ const Explore = () => {
         {parks.map(park => (
           <div key={park.pid} className="exploreCard" onClick={() => setSelectedPark(park)}>
             <img
-              src={`https://nodejs-production-42f2.up.railway.app/uploads/${park.pimage}`}
+              src={`https://react.adityakuril.me/uploads/${park.pimage}`}
               alt={park.pname}
               className="exploreImage"
             />
@@ -43,7 +43,7 @@ const Explore = () => {
             <p><strong>Category:</strong> {selectedPark.category}</p>
             <p>{selectedPark.description}</p>
             <img
-              src={`https://nodejs-production-42f2.up.railway.app/uploads/${selectedPark.pimage}`}
+              src={`https://react.adityakuril.me/uploads/${selectedPark.pimage}`}
               alt={selectedPark.pname}
               className="modalImage"
             />
@@ -55,3 +55,4 @@ const Explore = () => {
 };
 
 export default Explore;
+

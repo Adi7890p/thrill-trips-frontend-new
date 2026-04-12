@@ -37,7 +37,7 @@ const AddPark = ({ onAdded }) => {
             if (accCache) formData.append("accountNumber", accCache);
         }
 
-        axios.post("https://nodejs-production-42f2.up.railway.app/owner/addpark", formData, {
+        axios.post("https://react.adityakuril.me/owner/addpark", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }

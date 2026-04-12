@@ -15,11 +15,11 @@ export default function AdminPanel() {
 
 
     useEffect(() => {
-        axios.get("https://nodejs-production-42f2.up.railway.app/parks")
+        axios.get("https://react.adityakuril.me/parks")
             .then(res => setParks(res.data))
             .catch(err => console.error(err));
 
-        axios.get("https://nodejs-production-42f2.up.railway.app/admins")
+        axios.get("https://react.adityakuril.me/admins")
             .then(res => setAdmins(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -43,7 +43,7 @@ export default function AdminPanel() {
             let res;
             if (editPark) {
                 // Update existing park
-                res = await axios.put(`https://nodejs-production-42f2.up.railway.app/updatepark/${editPark.pid}`, formData, {
+                res = await axios.put(`https://react.adityakuril.me/updatepark/${editPark.pid}`, formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 setParks(parks.map(p => (p.pid === editPark.pid ? res.data.park : p)));
@@ -51,7 +51,7 @@ export default function AdminPanel() {
             } else {
                 // Add new park
                 formData.append("parkId", form.parkId.value);
-                res = await axios.post("https://nodejs-production-42f2.up.railway.app/addpark", formData, {
+                res = await axios.post("https://react.adityakuril.me/addpark", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
 
@@ -68,7 +68,7 @@ export default function AdminPanel() {
 
     const handleParkDelete = async (pid) => {
         try {
-            await axios.delete(`https://nodejs-production-42f2.up.railway.app/deletepark/${pid}`);
+            await axios.delete(`https://react.adityakuril.me/deletepark/${pid}`);
             setParks(parks.filter(p => p.pid !== pid));
             showToastMsg("Park deleted", "danger");
         } catch (err) {
@@ -91,7 +91,7 @@ export default function AdminPanel() {
         const password = form.adminPassword.value;
 
         try {
-            const res = await axios.post("https://nodejs-production-42f2.up.railway.app/addadmin", { unm, password });
+            const res = await axios.post("https://react.adityakuril.me/addadmin", { unm, password });
             setAdmins([...admins, res.data.admin]);
             setShowAdminModal(false);
             showToastMsg("Admin added successfully", "success");
@@ -103,7 +103,7 @@ export default function AdminPanel() {
 
     const handleAdminDelete = async (unm) => {
         try {
-            await axios.delete(`https://nodejs-production-42f2.up.railway.app/deleteadmin/${unm}`);
+            await axios.delete(`https://react.adityakuril.me/deleteadmin/${unm}`);
             setAdmins(admins.filter(a => a.unm !== unm));
             showToastMsg("Admin deleted", "danger");
         } catch (err) {
@@ -163,7 +163,7 @@ export default function AdminPanel() {
                                             <td>
                                                 {park.pimage && (
                                                     <img
-                                                        src={`https://nodejs-production-42f2.up.railway.app/uploads/${park.pimage}`}
+                                                        src={`https://react.adityakuril.me/uploads/${park.pimage}`}
                                                         alt={park.pname}
                                                         style={{ height: '120px', width: '180px' }}
 
@@ -317,3 +317,4 @@ export default function AdminPanel() {
         </div>
     );
 }
+

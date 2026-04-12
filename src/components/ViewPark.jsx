@@ -24,7 +24,7 @@ const ViewPark = ({ park, bookings = [], onBack }) => {
                 {/* Core Park Info & Main Image Flow */}
                 <div className="flex flex-col md:flex-row gap-8 items-start shrink-0">
                     <div className="w-full md:w-[40%] max-w-md shrink-0">
-                        <img src={park.parkImage ? `https://nodejs-production-42f2.up.railway.app/uploads/${park.parkImage}` : "/dubai.png"} className="w-full h-[300px] object-cover rounded-2xl shadow-md border border-gray-100" alt="Main Park Cover" />
+                        <img src={park.parkImage ? `https://react.adityakuril.me/uploads/${park.parkImage}` : "/dubai.png"} className="w-full h-[300px] object-cover rounded-2xl shadow-md border border-gray-100" alt="Main Park Cover" />
                     </div>
                     <div className="flex-1 flex flex-col pt-2">
                         <h2 className="text-4xl md:text-5xl font-black text-[#1a2b4c] uppercase tracking-wider mb-4 leading-tight">{park.pname}</h2>
@@ -69,7 +69,7 @@ const ViewPark = ({ park, bookings = [], onBack }) => {
                         <h3 className="text-lg font-black text-[#1a2b4c] uppercase tracking-wider mb-6 border-b pb-2">Park Gallery & Rides Showcase</h3>
                         <div className="flex overflow-x-auto gap-4 scrollbarhider pb-4">
                             {park.rideImages.map((img, idx) => (
-                                <img key={idx} src={`https://nodejs-production-42f2.up.railway.app/uploads/${img}`} className="h-[20vh] md:h-[25vh] min-w-[250px] md:min-w-[350px] rounded-xl object-cover shadow-sm border border-gray-200 shrink-0 cursor-pointer" alt="Park Ride View" />
+                                <img key={idx} src={`https://react.adityakuril.me/uploads/${img}`} className="h-[20vh] md:h-[25vh] min-w-[250px] md:min-w-[350px] rounded-xl object-cover shadow-sm border border-gray-200 shrink-0 cursor-pointer" alt="Park Ride View" />
                             ))}
                         </div>
                     </div>
@@ -80,3 +80,4 @@ const ViewPark = ({ park, bookings = [], onBack }) => {
 };
 
 export default ViewPark;
+

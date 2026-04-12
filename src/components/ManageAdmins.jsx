@@ -13,7 +13,7 @@ const ManageAdmins = () => {
 
     const fetchAdmins = async () => {
         try {
-            const res = await axios.get('https://nodejs-production-42f2.up.railway.app/admin/admins');
+            const res = await axios.get('https://react.adityakuril.me/admin/admins');
             if (res.data.success) {
                 setAdmins(res.data.admins);
             }
@@ -28,7 +28,7 @@ const ManageAdmins = () => {
         e.preventDefault();
         if (!unm || !password) return alert("Please fill all fields");
         try {
-            const res = await axios.post('https://nodejs-production-42f2.up.railway.app/admin/admins', { unm, password });
+            const res = await axios.post('https://react.adityakuril.me/admin/admins', { unm, password });
             if (res.data.success) {
                 setAdmins([...admins, res.data.admin]);
                 setUnm("");
@@ -44,7 +44,7 @@ const ManageAdmins = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to remove this administrator account?")) return;
         try {
-            const res = await axios.delete(`https://nodejs-production-42f2.up.railway.app/admin/admins/${id}`);
+            const res = await axios.delete(`https://react.adityakuril.me/admin/admins/${id}`);
             if (res.data.success) {
                 setAdmins(admins.filter(a => a._id !== id));
             }
@@ -111,3 +111,4 @@ const ManageAdmins = () => {
 };
 
 export default ManageAdmins;
+

@@ -8,7 +8,7 @@ const Trips = () => {
     useEffect(
         () => {
             const helo = async () => {
-                await axios.get('https://nodejs-production-42f2.up.railway.app/bookings/' + sessionStorage.getItem("username")).then((res) => {
+                await axios.get('https://react.adityakuril.me/bookings/' + sessionStorage.getItem("username")).then((res) => {
                     setBookings(res.data);
                     console.log(res.data);
                 });
@@ -33,7 +33,7 @@ const Trips = () => {
                         return (
                             <tr key={idx} className='flex border-b border-dashed hover:bg-yellow-200 transition-all duration-300 justify-between w-full p-3 items-center  text-orange-600 flex-wrap '>
                                 <td className='w-1/4 text-center' >{elem.park?.pname}</td>
-                                <td className='w-1/4 text-center' ><img src={"https://nodejs-production-42f2.up.railway.app/uploads/" + (elem.park?.parkImage || elem.park?.pimage)} className='rounded-xl border-2 border-amber-700 border-dashed p-1 mx-auto' alt="" /></td>
+                                <td className='w-1/4 text-center' ><img src={"https://react.adityakuril.me/uploads/" + (elem.park?.parkImage || elem.park?.pimage)} className='rounded-xl border-2 border-amber-700 border-dashed p-1 mx-auto' alt="" /></td>
                                 <td className='w-1/4 text-center' >{elem.park?.pcity}</td>
                                 <td className='w-1/4 text-center' >{elem.park?.category}</td>
                             </tr>
@@ -51,3 +51,4 @@ const Trips = () => {
 }
 
 export default Trips
+

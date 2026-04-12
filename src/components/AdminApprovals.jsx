@@ -6,7 +6,7 @@ const AdminApprovals = ({ approvals, setApprovals }) => {
     const handleAction = async (id, status) => {
         try {
             setApprovals(prev => prev.filter(p => p._id !== id));
-            await axios.put(`https://nodejs-production-42f2.up.railway.app/admin/parks/${id}/status`, { status });
+            await axios.put(`https://react.adityakuril.me/admin/parks/${id}/status`, { status });
         } catch (error) {
             console.error("Failed to update status");
         }
@@ -65,15 +65,15 @@ const AdminApprovals = ({ approvals, setApprovals }) => {
                                 </td>
                                 <td className='w-[35%] flex justify-center items-center gap-[1vw]'>
                                     <div className="flex flex-col items-center">
-                                        <a href={`https://nodejs-production-42f2.up.railway.app/uploads/${park.parkImage}`} target="_blank" rel="noreferrer" title="View Full Park Image">
-                                            <img src={`https://nodejs-production-42f2.up.railway.app/uploads/${park.parkImage}`} className="w-[4vw] h-[4vw] object-cover rounded-lg border border-blue-300 p-0.5 bg-white/10 shadow-md hover:scale-110 transition-transform cursor-pointer" alt="Park Main" onError={(e) => { e.target.src = '/carnival-tent.png' }} />
+                                        <a href={`https://react.adityakuril.me/uploads/${park.parkImage}`} target="_blank" rel="noreferrer" title="View Full Park Image">
+                                            <img src={`https://react.adityakuril.me/uploads/${park.parkImage}`} className="w-[4vw] h-[4vw] object-cover rounded-lg border border-blue-300 p-0.5 bg-white/10 shadow-md hover:scale-110 transition-transform cursor-pointer" alt="Park Main" onError={(e) => { e.target.src = '/carnival-tent.png' }} />
                                         </a>
                                         <span className="text-[0.7vw] mt-1 text-blue-200 uppercase tracking-widest">Main</span>
                                     </div>
                                     {park.rideImages && park.rideImages.map((ride, idx) => (
                                         <div key={idx} className="flex flex-col items-center">
-                                            <a href={`https://nodejs-production-42f2.up.railway.app/uploads/${ride}`} target="_blank" rel="noreferrer" title={`View Full Ride ${idx + 1} Image`}>
-                                                <img src={`https://nodejs-production-42f2.up.railway.app/uploads/${ride}`} className="w-[4vw] h-[4vw] object-cover rounded-lg border border-blue-300 p-0.5 bg-white/10 shadow-md hover:scale-110 transition-transform cursor-pointer" alt={`Ride ${idx + 1}`} onError={(e) => { e.target.src = '/ticket.png' }} />
+                                            <a href={`https://react.adityakuril.me/uploads/${ride}`} target="_blank" rel="noreferrer" title={`View Full Ride ${idx + 1} Image`}>
+                                                <img src={`https://react.adityakuril.me/uploads/${ride}`} className="w-[4vw] h-[4vw] object-cover rounded-lg border border-blue-300 p-0.5 bg-white/10 shadow-md hover:scale-110 transition-transform cursor-pointer" alt={`Ride ${idx + 1}`} onError={(e) => { e.target.src = '/ticket.png' }} />
                                             </a>
                                             <span className="text-[0.7vw] mt-1 text-blue-200 uppercase tracking-widest">Ride {idx + 1}</span>
                                         </div>
@@ -92,3 +92,4 @@ const AdminApprovals = ({ approvals, setApprovals }) => {
     )
 }
 export default AdminApprovals;
+

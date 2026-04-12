@@ -36,7 +36,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("https://nodejs-production-42f2.up.railway.app/loginUser", {
+      const res = await fetch("https://react.adityakuril.me/loginUser", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: userUsername, password: userPassword }),
@@ -76,7 +76,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("https://nodejs-production-42f2.up.railway.app/loginAdmin", {
+      const res = await fetch("https://react.adityakuril.me/loginAdmin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: adminUsername, password: adminPassword }),
@@ -194,3 +194,4 @@ const Login = () => {
 };
 
 export default Login;
+

@@ -43,7 +43,7 @@ const AdminPanel = () => {
   useEffect(() => {
     const fetchPendingParks = async () => {
       try {
-        const res = await axios.get('https://nodejs-production-42f2.up.railway.app/admin/parks/pending');
+        const res = await axios.get('https://react.adityakuril.me/admin/parks/pending');
         if (res.data.success) {
           setApprovals(res.data.parks);
         }
@@ -53,7 +53,7 @@ const AdminPanel = () => {
     };
     const fetchAdminData = async () => {
       try {
-        const res = await axios.get('https://nodejs-production-42f2.up.railway.app/admin/dashboard-data');
+        const res = await axios.get('https://react.adityakuril.me/admin/dashboard-data');
         if (res.data.success) {
           setAdminData(res.data);
         }
@@ -65,7 +65,7 @@ const AdminPanel = () => {
     fetchAdminData();
 
     // Set refresh mechanism natively tied to socket if needed
-    const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
+    const newSocket = io('https://react.adityakuril.me', {
       withCredentials: true
     });
 
@@ -196,3 +196,4 @@ const AdminPanel = () => {
 }
 
 export default AdminPanel
+

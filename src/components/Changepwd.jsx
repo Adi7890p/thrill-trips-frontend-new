@@ -6,7 +6,7 @@ const Changepwd = () => {
     const [neww ,setneww]=useState('');
 
     const cng = async () =>{
-        await axios.post('https://nodejs-production-42f2.up.railway.app/cng',
+        await axios.post('https://react.adityakuril.me/cng',
             {old : old,neww : neww,username : sessionStorage.getItem("username")}
         ).then((res)=>{
             alert(res.data.message);
@@ -31,3 +31,4 @@ const Changepwd = () => {
 }
 
 export default Changepwd
+

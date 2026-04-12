@@ -42,7 +42,7 @@ const OwnerDash = () => {
             setHasUnread(false);
             const ownerEmail = sessionStorage.getItem("owner");
             if (ownerEmail) {
-                axios.post('https://nodejs-production-42f2.up.railway.app/owner/notifications/read', { email: ownerEmail });
+                axios.post('https://react.adityakuril.me/owner/notifications/read', { email: ownerEmail });
                 setNotifications(prev => prev.map(n => ({ ...n, read: true })));
             }
         } else {
@@ -53,13 +53,13 @@ const OwnerDash = () => {
     useEffect(() => {
         const ownerEmail = sessionStorage.getItem("owner");
         if (ownerEmail) {
-            axios.get(`https://nodejs-production-42f2.up.railway.app/owner/notifications/${ownerEmail}`).then(res => {
+            axios.get(`https://react.adityakuril.me/owner/notifications/${ownerEmail}`).then(res => {
                 if (res.data.success) {
                     setNotifications(res.data.notifications);
                     setHasUnread(res.data.notifications.some(n => !n.read));
                 }
             });
-            axios.get(`https://nodejs-production-42f2.up.railway.app/owner/data/${ownerEmail}`).then(res => {
+            axios.get(`https://react.adityakuril.me/owner/data/${ownerEmail}`).then(res => {
                 if (res.data.success) {
                     setParks(res.data.parks);
                     setBookings(res.data.bookings);
@@ -76,7 +76,7 @@ const OwnerDash = () => {
             // navigate("/owner-login");
         }
         if (token) {
-            axios.post("https://nodejs-production-42f2.up.railway.app/owner-verifier", { token }).then((res) => {
+            axios.post("https://react.adityakuril.me/owner-verifier", { token }).then((res) => {
                 if (!res.data.success) {
                     alert(res.data.message);
                     // navigate("/owner-login");
@@ -88,7 +88,7 @@ const OwnerDash = () => {
                     setHasParks(res.data.hasParks);
 
                     // Initialise WebSocket room connection targeting this Owner specifically
-                    const newSocket = io('https://nodejs-production-42f2.up.railway.app', {
+                    const newSocket = io('https://react.adityakuril.me', {
                         withCredentials: true
                     });
                     newSocket.on('connect', () => {

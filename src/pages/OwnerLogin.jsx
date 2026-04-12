@@ -19,7 +19,7 @@ const OwnerLogin = () => {
         setMsg('');
         console.log(email, pwd);
         if (state == "SignUp") {
-            await axios.post("https://nodejs-production-42f2.up.railway.app/owner-signup-email", {
+            await axios.post("https://react.adityakuril.me/owner-signup-email", {
                 email: email,
                 pwd: pwd
             }).then((res) => {
@@ -42,7 +42,7 @@ const OwnerLogin = () => {
                 console.log(err);
             })
         } else {
-            await axios.post("https://nodejs-production-42f2.up.railway.app/owner-login-email", {
+            await axios.post("https://react.adityakuril.me/owner-login-email", {
                 email: email,
                 pwd: pwd
             }).then((res) => {
@@ -79,7 +79,7 @@ const OwnerLogin = () => {
         })
         if (em != "") {
 
-            await axios.post("https://nodejs-production-42f2.up.railway.app/google-signin", {
+            await axios.post("https://react.adityakuril.me/google-signin", {
                 email: em
             }).then((res) => {
                 console.log(res.data);
@@ -146,3 +146,4 @@ const OwnerLogin = () => {
 }
 
 export default OwnerLogin
+

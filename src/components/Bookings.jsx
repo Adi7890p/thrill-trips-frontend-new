@@ -14,7 +14,7 @@ const Bookings = () => {
     useEffect(
         () => {
             const helo = async () => {
-                await axios.get('https://nodejs-production-42f2.up.railway.app/bookings/' + sessionStorage.getItem("username")).then((res) => {
+                await axios.get('https://react.adityakuril.me/bookings/' + sessionStorage.getItem("username")).then((res) => {
                     setBookings(res.data);
                     console.log("data : ", res.data);
 
@@ -27,7 +27,7 @@ const Bookings = () => {
     // useEffect(
     //     () => {
     //         bookings.map((elem) => {
-    //             axios.get('https://nodejs-production-42f2.up.railway.app/bookpark/' + elem.pid).then((res) => {
+    //             axios.get('https://react.adityakuril.me/bookpark/' + elem.pid).then((res) => {
     //                 setpnm((prev)=>[...prev,res.data]);
     //                 sc(c+1);
     //                 // console.log(res.data);
@@ -49,7 +49,7 @@ const Bookings = () => {
         navigate('/booking');
     }
     const cancelBooking = async (_id, pid) => {
-        await axios.delete('https://nodejs-production-42f2.up.railway.app/cancel/' + _id).then((res) => {
+        await axios.delete('https://react.adityakuril.me/cancel/' + _id).then((res) => {
             alert(pid + " " + res.data.message);
             sc(c + 1);
             // scc(cc+1);
@@ -101,7 +101,7 @@ const Bookings = () => {
         doc.text('Booking Details', 20, y);
         y += 7;
         // Fetch park image as data URL
-        let imageUrl = `https://nodejs-production-42f2.up.railway.app/uploads/${bookings[idx].park.parkImage || bookings[idx].park.pimage}`;
+        let imageUrl = `https://react.adityakuril.me/uploads/${bookings[idx].park.parkImage || bookings[idx].park.pimage}`;
         let imageDataUrl = null;
         try {
             const response = await fetch(imageUrl);
@@ -198,3 +198,4 @@ const Bookings = () => {
 };
 
 export default Bookings;
+
